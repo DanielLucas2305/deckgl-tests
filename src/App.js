@@ -73,8 +73,8 @@ function App() {
         anchorY: 128,
       }),
       getPosition: (d) => d.geometry.coordinates,
-      getSize: 6,
-      sizeScale: 15,
+      getSize: 4,
+      sizeScale: 10,
       loadOptions: {
         fetch: window.fetch,
       },
@@ -108,6 +108,7 @@ function App() {
             data: uploadedData,
             filled: true,
             stroked: true,
+            pointRadiusMinPixels: 10,
             getFillColor: [0, 140, 255, 100],
             getLineColor: [0, 0, 255],
           }),
@@ -130,8 +131,6 @@ function App() {
       reader.readAsText(file);
     }
   };
-
-  console.log(pontosData.features);
 
   return (
     <div style={{ position: "relative", height: "100vh" }}>
